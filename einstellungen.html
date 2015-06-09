@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function SetStandardValue(){
+                localStorage.Klasse = document.getElementById("klassen").value;
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div id="einstellungen_vertretungsplan">
+            <h3 style="text-align: center;">Vertretungsplan Einstellungen</h3>
+            <br>
+        <select id="klassen" onchange="SetStandardValue()" style="margin-top:6px;margin-bottom: 6px;">
+            <option value="">Wähle deine Klasse aus:</option>
+            <option value="alleklassen">Alle Klassen anzeigen</option>
+            <option value="BGT1-1">BGT1-1</option>
+            <option value="BGT1-2">BGT1-2</option>
+            <option value="BGT2-1">BGT2-1</option>
+            <option value="BGT2-2">BGT2-2</option>
+            <option value="BGT3-1">BGT3-1</option>
+            <option value="BGT3-2">BGT3-2</option>
+        </select>
+            <p style="font-size: 12px;">
+                *Die Klasse die Sie an dieser Stelle auswählen, wird als Standardklasse ausgewählt und bei jedem Seitenaufruf automatisch geladen.
+            </p>
+
+        </div>
+        <!-- <div class="box">
+            <ul style="list-style: none">
+                <li style="display:table;padding:auto;width:100%;height:35px;vertical-align:central;font-size:16px;margin-top: auto;margin-bottom: auto;">
+                    Automatisch laden
+                </li>
+                <li style="display:table;padding:auto;width:100%;height:35px;vertical-align:central;font-size:16px">
+                    Aktualisierungsdatum 
+                </li>
+                <li style="display:table;padding:auto;width:100%;height:35px;vertical-align:central;font-size:16px">
+                    
+                </li>
+            </ul>
+        </div> -->
+        
+    </body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>db</title>
+
+</head>
+<body>
+    <br>
+    <div class="box" id="0">
+        <p style="font-size:17px;text-align:center;">Wählen Sie nun Ihre Klasse aus</p>
+            <select id="klasse" onchange="ZeigeVertretungsplan()">
+                <option value="">Wähle deine Klasse aus:</option>
+                    <option value="alleklassen">Alle Klassen anzeigen</option>
+                    <option value="BGT1-1">BGT1-1</option>
+                    <option value="BGT1-2">BGT1-2</option>
+                    <option value="BGT2-1">BGT2-1</option>
+                    <option value="BGT2-2">BGT2-2</option>
+                    <option value="BGT3-1">BGT3-1</option>
+                    <option value="BGT3-2">BGT3-2</option>
+            </select>
+        
+  <div id="texthint"></div> 
+  </div>
+
+<br>
+<script>
+    
+    function ZeigeVertretungsplan(){
+        var klasse = document.getElementById("klasse").value;
+        
+        var xmlhttp=new XMLHttpRequest();
+        if (document.getElementById("klasse").value==="") { 
+            klasse = localStorage.Klasse;
+        }
+        
+        xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState===4 && xmlhttp.status===200) {
+            document.getElementById("texthint").innerHTML=xmlhttp.responseText;
+        }
+    };
+    xmlhttp.open("GET","http://webapp.gbs-labor.de/vertretungsplan.php?klasse="+klasse,true);
+    xmlhttp.send();
+    }
+    
+    $(document).ready(function(){ 
+        var klasse = localStorage.Klasse;
+        var xmlhttp=new XMLHttpRequest();
+        
+        
+        xmlhttp.onreadystatechange=function() {
+        if (xmlhttp.readyState===4 && xmlhttp.status===200) {
+            document.getElementById("texthint").innerHTML=xmlhttp.responseText;
+        }
+    };
+    xmlhttp.open("GET","http://webapp.gbs-labor.de/vertretungsplan.php?klasse="+klasse,true);
+    xmlhttp.send();
+    
+    });
+    
+    
+    /*function ZeigeAktualisierungsstatus(){
+        var vorherigerdiv = document.getElementById('0');
+        var neuerdiv = document.createElement('div');
+        vorherigerdiv.appendchild(neuerdiv);
+        neuerdiv.setAttribute("class","box");
+        neuerdiv.style.display = "table-cell";
+        neuerdiv.id = "zeitstempel";
+        neuerdiv.innerHTML = "Zuletzt aktualisiert: <br>" + aktualisierungsstempel;
+    }*/
+    
+    /*button.onclick = function () {
+    if (document.getElementById('dolly')) {
+        var table = document.getElementById('dolly');
+        var newNode = table.cloneNode(true);
+        newNode.setAttribute('id','newTable');
+        button.parentNode.insertBefore(newNode, button);
+        button.parentNode.removeChild(button);
+    } 
+    return false; 
+}*/
+</script>
+
+
+</body>
+</html>

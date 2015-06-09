@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>db</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" href="css/index.css" type="text/css">
+        <script type="text/javascript" src="./js/libs/jquery/jquery-2.1.3.min.js"></script>
+
+        <script type="text/javascript">
+            function SlideMenu(){
+                nav = document.getElementsByClassName("menu-container")[0];
+                overlay = document.getElementsByClassName("overlay")[0];
+                menubtn = document.getElementById("menutbtn");
+                if(nav.style.marginLeft === "-300px") {
+                    overlay.style.display = "block";
+                    overlay.style.opacity = "0.5";
+                    overlay.style.filter = "alpha(opacity=0.5)";
+                    nav.style.marginLeft = "0";
+                    
+                    
+                } 
+                else {
+                    overlay.style.opacity = "0";
+                    overlay.style.filter = "alpha(opacity=0)";
+                    overlay.style.display = "none";
+                    nav.style.marginLeft = "-300px";
+                    
+                }
+            }
+            
+            $(document).ready(function(){ 
+                document.getElementsByClassName("menu-container")[0].style.marginLeft = "-300px";
+                $('#wrapper').load('vertretungsplan.html');
+                document.getElementById("title").innerHTML = "<p id='p-title'>vertretungsplan</p>";
+		$('.nav .nav-item').click(function(e){
+                    e.preventDefault();
+                    var title = document.getElementById("title");
+                    overlay.style.opacity = "0";
+                    overlay.style.filter = "alpha(opacity=0)";
+                    overlay.style.display = "none";
+                    nav.style.marginLeft = "-300px";
+                    $("#wrapper").fadeOut(0);
+                    var seite = $(this).data('seite'); 
+                    seite = seite + '.html'; 
+                    $('#wrapper').fadeIn(600);
+                    $('#wrapper').load(seite);
+                    title.innerHTML = "<p id='p-title'>"+$(this).data('seite')+"</p>";
+		});
+            });
+                
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="school-icon-container">
+                <img id="school-icon" src="img/gbs.png" alt="..." width="45" height="20">
+            </div>
+            <div id="title">
+            </div>
+            <div class="menubtn-container">
+                <img onclick="SlideMenu()" id="menubtn" src="img/icon-menu.png" alt="..." width="24" height="24">
+            </div>
+            
+        </header>
+        
+        <div id="background-div"></div>
+
+        <div id="main">
+            <div id="wrapper"></div>
+        </div>
+        
+        <div class="overlay" onclick="SlideMenu()"></div>
+        
+        <!-- <div class="menu-container" >
+            <ul class="nav">
+                <li id="menu-banner">
+                    <span id="gbs-icon">
+                        <img id="school-icon-banner" src="images/gbs.png" alt="..." width="70" height="30">
+                    </span>
+                    <span id="banner-text">
+                        Gewerbliche Berufsbildende Schulen des Landkreises Grafschaft Bentheim
+                    </span>
+                </li>
+                <li>
+                    <div id="testing" data-seite="vertretungsplan">
+                        <img src="./images/menu-icons/document.png" alt="...">
+                        Vertretungsplan
+                    </div>
+                </li>
+                <li>
+                    <a data-seite="vertretungsplan" href="#">
+                        <img src="./images/menu-icons/document.png" alt="...">
+                        Vertretungsplan
+                    </a>
+                </li>
+                <li>
+                    <a data-seite="entschuldigung" href="#">
+                        <img src="./images/menu-icons/mail.png" alt="...">
+                        Entschuldigung
+                    </a>
+                </li>
+                <li>
+                    <a data-seite="news" href="#">
+                        <img src="./images/menu-icons/news.png" alt="...">
+                        News
+                    </a>
+                </li>
+                <li>
+                    <a data-seite="kurzmitteilung" href="#">
+                        <img src="./images/menu-icons/mitteilung.png" alt="...">
+                        Kurzmitteilung
+                    </a>
+                </li>
+                <li>
+                    <a data-seite="einstellungen" href="#">
+                        <img src="./images/menu-icons/settings.png" alt="...">
+                        Einstellungen
+                    </a>
+                </li>
+            </ul>
+        </div> -->
+        
+        <div class="menu-container" >
+            <ul class="nav">
+                <li id="menu-banner">
+                    <span id="gbs-icon">
+                        <img id="school-icon-banner" src="img/gbs.png" alt="..." width="70" height="30">
+                    </span>
+                    <span id="banner-text">
+                        Gewerbliche Berufsbildende Schulen des Landkreises Grafschaft Bentheim
+                    </span>
+                </li>
+                <li>
+                    <div class="nav-item" data-seite="vertretungsplan">
+                        <img src="img/menu-icons/document.png" alt="...">
+                        Vertretungsplan
+                    </div>
+                </li>
+                <li>
+                    <div class="nav-item" data-seite="entschuldigung">
+                        <img src="img/menu-icons/mail.png" alt="...">
+                        Entschuldigung
+                    </div>
+                </li>
+                <li>
+                    <div class="nav-item" data-seite="news">
+                        <img src="img/menu-icons/news.png" alt="...">
+                        News
+                    </div>
+                </li>
+                <li>
+                    <div class="nav-item" data-seite="kurzmitteilung">
+                        <img src="img/menu-icons/mitteilung.png" alt="...">
+                        Kurzmitteilung
+                    </div>
+                </li>
+                <li>
+                    <div class="nav-item" data-seite="einstellungen">
+                        <img src="img/menu-icons/settings.png" alt="...">
+                        Einstellungen
+                    </div>
+                </li>
+            </ul>
+        </div> 
+                
+    </body>
+</html>
+
+
+
+
+
+

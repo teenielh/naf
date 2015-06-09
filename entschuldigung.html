@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>db</title>
+    <!-- <link rel="stylesheet" href="./css/bootstrap.css" type="text/css">
+    <script type="text/javascript" src="./js/libs/jquery/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="./js/libs/bootstrap.js"></script> -->
+    
+    <style>
+        form {
+            width: 95%;
+            margin-left:auto;
+            margin-right:auto;
+        }
+		label {
+            width:95%;
+            padding:0;
+            padding-bottom:10px;
+            margin-left:auto;
+            margin-right:auto;
+            margin-bottom: 20px;
+            font-family: "Open Sans", sans-serif;
+            font-size: 18px;
+            color:rgb(128, 128, 128);
+            
+        }
+		input[type="text"] {
+            display: block;
+            margin-top: 0px;
+            margin-bottom: 3px;
+            margin-left: 0px;
+            margin-right: 0px;
+            width: 95%;
+            font-family: "Open Sans", sans-serif;
+            font-size: 18px;
+            -webkit-appearance: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+             box-shadow: none;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            -o-border-radius: 0px;
+            border-radius: 0px;
+        }
+        .underlined input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-right: solid 2px /*#c9c9c9;*/rgba(255,255,255,0);
+            border-bottom: solid 2px /*#c9c9c9;*/rgba(255,255,255,0);
+            -webkit-transition: border 0.3s;
+            -moz-transition: border 0.3s;
+            -o-transition: border 0.3s;
+            transition: border 0.3s;
+            }
+        .style input[type="text"]:focus, .style input[type="text"].focus {
+            border-right: solid 2px #969696;
+            border-bottom: solid 2px #969696;
+        }
+        input[type="text"]:focus {
+            outline: none;
+        }
+        form ul li {
+            border-bottom:none;
+        }
+        #absenden {
+            display:table-cell;
+            text-align:center;
+            vertical-align:middle;
+            width:100%;
+            margin-left:0px;
+            margin-right:0px;
+            margin-top: 10px;
+            margin-bottom:10px;
+            background: rgb(0, 0, 0);
+            font-family: "Open Sans", sans-serif;
+            font-size: 18px;
+            color:white;
+            border-radius:4px;
+            border: 1.5px solid rgb(253, 253, 253);
+            padding:10px;
+        }
+        
+        #absenden:focus {
+            outline:none;
+        }
+        #wrapper {
+            background:#FFFFFF;
+        }
+        /*label {
+            width:95%;
+            padding:0;
+            padding-bottom:10px;
+            margin-left:auto;
+            margin-right:auto;
+            margin-bottom: 20px;
+            font-family: "Open Sans", sans-serif;
+            font-size: 18px;
+            color:rgb(128, 128, 128);
+            
+        }
+        input[type="text"] {
+            display: block;
+            margin-top: 8px;
+            margin-bottom: 10px;
+            margin-left: 0px;
+            margin-right: 0px;
+            width: 95%;
+            font-family: "Open Sans", sans-serif;
+            font-size: 18px;
+            -webkit-appearance: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+             box-shadow: none;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            -ms-border-radius: 0px;
+            -o-border-radius: 0px;
+            border-radius: 0px;
+        }
+        .underlined input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-bottom: solid 2px #c9c9c9;
+            -webkit-transition: border 0.3s;
+            -moz-transition: border 0.3s;
+            -o-transition: border 0.3s;
+            transition: border 0.3s;
+            }
+        .style-4 input[type="text"]:focus, .style-4 input[type="text"].focus {
+            border-bottom: solid 2px #969696;
+        }
+        input[type="text"]:focus {
+            outline: none;
+        }
+        form ul li {
+            border-bottom:none;
+        }*/
+    </style>
+</head>
+<body>
+    <form>
+        <ul class="underlined style">
+            <!-- <li style="text-align: center;size:3em;font-family:'Open Sans',sans-serif;
+            font-size: 18px">Füllen Sie bitte das nachfolgende Formular korrekt aus</li> -->
+            <li>
+                <label for="vorname">Vor- und Nachname:</label>
+                <input type="text" placeholder=" Vorname" id="vorname">
+            </li>
+            <li>
+                
+                <input type="text" placeholder=" Nachname" id="nachname">
+            </li>
+            <li>
+                
+                <input type="text" placeholder=" Ihre Klasse" id="klasse">
+            </li>
+            <li>
+                
+                <input type="text" placeholder=" Ihr Klassenlehrer" id="lehrer">
+            </li>
+            <li class="inline">
+                <label class="inlinelabel" for="start">Von:</label>
+                <input type="text" placeholder=" Anfangsdatum" id="start">
+            </li>
+            <li class="inline">
+                <label class="inlinelabel" for="bis">Bis:</label>
+                <input type="text" placeholder=" Enddatum" id="bis">
+            </li>
+            <li>
+                <label for="grund">Grund für die Abwesenheit:</label>
+                <input type="text" placeholder=" z.B.: Erkrankung,Führerscheinprüfung" id="grund">
+            </li>
+            <li>
+                <label for="mail">Ihre E-Mail Adresse:</label>
+                <input type="text" placeholder=" z.B.: max-mustermann@web.de" id="mail">
+            </li>
+              
+        </ul>
+        <button id="absenden">Versenden</button>
+       
+    </form>
+</body>
+</html>
